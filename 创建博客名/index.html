@@ -75,7 +75,9 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -174,8 +176,6 @@
                             
                                 <a class="fa GitHub" href="https://github.com/xiaohongxiao?tab=repositories" title="GitHub"></a>
                             
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
                                 <a class="fa LinkedIn" href="https://www.linkedin.com/in/%E4%B9%BE%E9%B9%8F-%E9%B2%81-4239b9165/" title="LinkedIn"></a>
                             
                         </ul>
@@ -255,8 +255,6 @@
                                 <a class="fa Email" target="_blank" href="mailto:luqianpeng@123.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/xiaohongxiao?tab=repositories" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
                             
                                 <a class="fa LinkedIn" target="_blank" href="https://www.linkedin.com/in/%E4%B9%BE%E9%B9%8F-%E9%B2%81-4239b9165/" title="LinkedIn"></a>
                             
@@ -417,7 +415,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 8;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
