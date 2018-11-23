@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="鲁乾鹏的博客">
 <meta property="og:description" content="这是一篇关于Doxygen快速上手和介绍的文章 主要分为以下几点来介绍1.Doxygen介绍2.Doxygen实际操作 资源主要来源于以下文章：  Doxygen 10分钟入门教程  本文所使用的Doxygen版本为1.8.14，其他版本新增的功能均不在本文讨论范畴">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-23T06:20:17.143Z">
+<meta property="og:updated_time" content="2018-11-23T06:29:48.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Doxygen使用心得和教程">
 <meta name="twitter:description" content="这是一篇关于Doxygen快速上手和介绍的文章 主要分为以下几点来介绍1.Doxygen介绍2.Doxygen实际操作 资源主要来源于以下文章：  Doxygen 10分钟入门教程  本文所使用的Doxygen版本为1.8.14，其他版本新增的功能均不在本文讨论范畴">
@@ -343,7 +343,12 @@
 <li>支持多平台：Windows，Linux， Mac OS</li>
 <li>文档生成的形式，包括HTML,PDF, RTF。</li>
 </ol>
-<h2 id="Doxygen实际操作"><a href="#Doxygen实际操作" class="headerlink" title="Doxygen实际操作"></a>Doxygen实际操作</h2><h3 id="Doxygen使用要求"><a href="#Doxygen使用要求" class="headerlink" title="Doxygen使用要求"></a>Doxygen使用要求</h3>
+<h2 id="Doxygen实际操作"><a href="#Doxygen实际操作" class="headerlink" title="Doxygen实际操作"></a>Doxygen实际操作</h2><h3 id="Doxygen使用要求"><a href="#Doxygen使用要求" class="headerlink" title="Doxygen使用要求"></a>Doxygen使用要求</h3><p>· 能够从电脑中调出控制台</p>
+<h4 id="下载和安装"><a href="#下载和安装" class="headerlink" title="下载和安装"></a>下载和安装</h4><p>doxygen的最新版本是1.8.14，下载链接可以在<a href="http://sourceforge.net/projects/doxygen/files/latest/download?source=files" target="_blank" rel="noopener">此处</a>点击。<br>下载完成后，双击安装。</p>
+<h3 id="准备源文件"><a href="#准备源文件" class="headerlink" title="准备源文件"></a>准备源文件</h3><p><strong>本文实例使用C语言编写</strong><br>这里准备了三个简单的C语言源代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main.c  <span class="comment">// 演示如何调用Dev中的设备接口</span></span><br><span class="line">dev.c   <span class="comment">// Dev设备的实现代码</span></span><br><span class="line">dev.h   <span class="comment">// Dev设备的操作接口</span></span><br></pre></td></tr></table></figure>
+<p>具体代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dev.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CNT_MAX 10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DEV_Example</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	Dev_Init();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; CNT_MAX; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Dev_PrintInt(i);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Dev_Close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	DEV_Example();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -354,7 +359,7 @@
         <p><span>本文标题:</span><a href="/2018/11/23/Doxygen使用心得和教程/">Doxygen使用心得和教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">鲁乾鹏</a></p>
         <p><span>发布时间:</span>2018-11-23, 13:57:26</p>
-        <p><span>最后更新:</span>2018-11-23, 14:20:17</p>
+        <p><span>最后更新:</span>2018-11-23, 14:29:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/11/23/Doxygen使用心得和教程/" title="Doxygen使用心得和教程">http://yoursite.com/2018/11/23/Doxygen使用心得和教程/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/23/Doxygen使用心得和教程/　　作者: 鲁乾鹏" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -384,7 +389,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Doxygen的介绍"><span class="toc-number">1.</span> <span class="toc-text">Doxygen的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Doxygen的定义"><span class="toc-number">1.1.</span> <span class="toc-text">Doxygen的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Doxygen的特点"><span class="toc-number">1.2.</span> <span class="toc-text">Doxygen的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Doxygen实际操作"><span class="toc-number">2.</span> <span class="toc-text">Doxygen实际操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Doxygen使用要求"><span class="toc-number">2.1.</span> <span class="toc-text">Doxygen使用要求</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Doxygen的介绍"><span class="toc-number">1.</span> <span class="toc-text">Doxygen的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Doxygen的定义"><span class="toc-number">1.1.</span> <span class="toc-text">Doxygen的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Doxygen的特点"><span class="toc-number">1.2.</span> <span class="toc-text">Doxygen的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Doxygen实际操作"><span class="toc-number">2.</span> <span class="toc-text">Doxygen实际操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Doxygen使用要求"><span class="toc-number">2.1.</span> <span class="toc-text">Doxygen使用要求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#下载和安装"><span class="toc-number">2.1.1.</span> <span class="toc-text">下载和安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备源文件"><span class="toc-number">2.2.</span> <span class="toc-text">准备源文件</span></a></li></ol></li></ol>
         
     </div>
     <style>
