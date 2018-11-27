@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="鲁乾鹏的博客">
 <meta property="og:description" content="这是关于python语言和python库的细节和心得文章，后期如果有更多心得，则会继续更新 主要分成以下几点来介绍1. Python介绍2. Python标准库细节3. python第三方库——virtualenv细节4. Python第三方库——numpy细节5. Python第三方库——pip细节 资源主要来源于以下文章：  Python3.5.6文档python中// 和/有什么区别后续资源">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-25T14:04:16.688Z">
+<meta property="og:updated_time" content="2018-11-27T00:45:57.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python及其库的一些细节">
 <meta name="twitter:description" content="这是关于python语言和python库的细节和心得文章，后期如果有更多心得，则会继续更新 主要分成以下几点来介绍1. Python介绍2. Python标准库细节3. python第三方库——virtualenv细节4. Python第三方库——numpy细节5. Python第三方库——pip细节 资源主要来源于以下文章：  Python3.5.6文档python中// 和/有什么区别后续资源">
@@ -352,7 +352,7 @@
 </blockquote>
 <ol>
 <li>以管理员身份运行命令提示符，使用pip3 install virtualenv命令安装virtualenv。</li>
-<li>使用mkdir zyproject命令再当前目录下创建一个名为zyproject的文件夹（名字随意）。<br>用命令virtualenv –no-site-packanges venv命令创建一个名为venv的独立的python运行环境。(参数–no-site-packages的作用是不把系统python环境中的所有第三方包复制过来，这样就得到了一个“干净”的python运行环境。新建的Python环境被放在当前目录下的venv目录下。)</li>
+<li>使用mkdir zyproject命令再当前目录下创建一个名为zyproject的文件夹（名字随意）。<br>用命令virtualenv –no-site-package 注意<code>no</code>前面有两个直杠。 venv命令创建一个名为venv的独立的python运行环境。(参数–no-site-packages的作用是不把系统python环境中的所有第三方包复制过来，这样就得到了一个“干净”的python运行环境。新建的Python环境被放在当前目录下的venv目录下。)</li>
 <li>激活该环境：<br>MAC、Linux将使用 source venv/bin/activate激活。<br>window系统，先使用cd venv进入当前目录下的venv中，然后用Scripts\activate即可。这时会注意到命令提示符变了，多了个venv前缀，表示当前是一个名为venv的Python环境中。</li>
 <li>然后接下来的各种操作与在系统环境中的操作是一样的，安装各种包，两个环境相互独立，互不干扰。</li>
 <li>使用deactivate退出当前环境。(再次进入虚拟环境使用以上方法即可)</li>
@@ -369,7 +369,7 @@
         <p><span>本文标题:</span><a href="/2018/11/23/python中的一些细节心得/">python及其库的一些细节</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">鲁乾鹏</a></p>
         <p><span>发布时间:</span>2018-11-23, 16:45:04</p>
-        <p><span>最后更新:</span>2018-11-25, 22:04:16</p>
+        <p><span>最后更新:</span>2018-11-27, 08:45:57</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/11/23/python中的一些细节心得/" title="python及其库的一些细节">http://yoursite.com/2018/11/23/python中的一些细节心得/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/11/23/python中的一些细节心得/　　作者: 鲁乾鹏" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
